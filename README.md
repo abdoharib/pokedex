@@ -1,7 +1,7 @@
 
 # Pokedex
 
-This is a mobile app developed with React Native to.
+This is a mobile app developed with React Native as an Interview Test.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ npx react-native run-ios
 ```
 or:
 ```bash
-npx react-native run-ios
+npx react-native start
 ```
 
 ### Android
@@ -62,7 +62,7 @@ npx react-native run-android
 ```
 or:
 ```bash
-npx react-native run-ios
+npx react-native start
 ```
 
 ## Commen issues for IOS
