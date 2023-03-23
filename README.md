@@ -13,6 +13,23 @@ Before running the app, ensure you have the following installed on your local ma
 - Xcode (for ios development)
 
 
+Sure, here's an updated Dependencies Used section with `pokeapi-typescript` added:
+
+Sure, here's an updated Dependencies Used section with `@shopify/flash-list` added:
+
+## Dependencies Used
+
+Here are the main dependencies used in this project:
+
+- `react-navigation` - library for routing and navigation
+- `axios` - library for making HTTP requests
+- `react-query` - library for handling server state and caching in React
+- `react-native-vector-icons` - library for using custom vector icons in React Native
+- `react-native-svg` - library for using SVG images in React Native
+- `nativewind` - utility-first CSS library for React Native
+- `pokeapi-typescript` - TypeScript definitions for the PokéAPI
+- `@shopify/flash-list` - library for displaying Preformance Optmized Lists
+
 ## Installation
 
 1. Clone the repository to your local machine.
@@ -90,3 +107,11 @@ npx react-native start
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+
+
+
+
+
+
