@@ -67,7 +67,7 @@ npx react-native start
 
 ## Commen issues for IOS
 
-1. if you are running the App OS X make sure your envourment is set up properly, follow the instructions on the link below for detailed steps : 
+1. if you are running the App on macOS make sure your envourment is set up properly, follow the instructions on the link below for detailed steps : 
 
 [Link text Here](https://reactnative.dev/docs/environment-setup)
 
