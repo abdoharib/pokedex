@@ -3,6 +3,10 @@
 
 This is a mobile app developed with React Native as an Interview Test.
 
+
+## UI Design is Created with Figma, link to the project
+[ User Interface Design ](https://www.figma.com/file/A9KP4S7WLtkEcRaaiBevGi/Pokedex?node-id=0%3A1&t=IUucflkytntpwOvd-1)
+
 ## Prerequisites
 
 Before running the app, ensure you have the following installed on your local machine:
