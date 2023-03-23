@@ -6,10 +6,11 @@ import {
     TextInput,
     View,
 } from 'react-native';
-import { HeaderBackButtonProps } from '@react-navigation/native-stack/lib/typescript/src/types';
+import { HeaderBackButtonProps, NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { ReactNode, useState } from 'react';
 import colors from "tailwindcss/colors";
+import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 type Props = {
     onSearch?: (q:string) => void,
@@ -20,11 +21,8 @@ type Props = {
 export default function SearchInput(props:Props): JSX.Element {
 
     let [query, setQuery] = useState('')
+    const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
-    function onChange(q:string){
-
-        setQuery(q)
-    }
 
     return (
         <View className='flex mb-6 flex-row border-2 border-gray-300 p-3 rounded-[60px] '>
@@ -34,6 +32,7 @@ export default function SearchInput(props:Props): JSX.Element {
                 value={query}
                 {...props}
                 keyboardType="numeric"
+                onEndEditing={(e)=>navigation.push('details',{name:query})}
             />
             <View className='pr-2'>
                 {props.icon || null}

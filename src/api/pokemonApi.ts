@@ -13,7 +13,6 @@ export const getPokemonSpeciesByName = async (name:string) => {
 
 
 export const getAllPokemons = async ({ pageParam = 0 }) => {
-    // console.log(pageParam);
     
     const response = await axios.get<INamedApiResourceList<IPokemon>>(`pokemon?limit=${10}&offset=${pageParam}`);
     return response.data;

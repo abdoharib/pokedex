@@ -2,6 +2,7 @@ import {
 
     Button,
     Image,
+    ListRenderItem,
     ListRenderItemInfo,
     Pressable,
     Text,
@@ -21,16 +22,20 @@ import getPokemonColor from '../../../utils/get-pokemon-color';
 var toHex = require('colornames')
 
 
-export default function PokemonListItem(props: ListRenderItemInfo<INamedApiResource<IPokemon>>): JSX.Element {
+export default function PokemonListItem(props: INamedApiResource<IPokemon>): JSX.Element {
 
 
-    const pokemonId = getLastUrlSegment(props.item.url)
+    const pokemonId = getLastUrlSegment(props.url)
     const { isLoading, isError, data, error } = useQuery(['pokemon', pokemonId], () => getPokemonSpeciesByName(pokemonId))
 
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
    
     if (isLoading) {
-        return <Text>Loading...</Text>
+        return (
+            <View className='flex flex-row min-h-[110] mb-8 items-center bg-gray-300 justify-between rounded-[50px]'>
+
+            </View>
+        )
     }
 
     if (isError) {
@@ -39,7 +44,7 @@ export default function PokemonListItem(props: ListRenderItemInfo<INamedApiResou
     
     return (
         <View style={{
-            backgroundColor: getPokemonColor(data.color.name)
+            backgroundColor: getPokemonColor(data.color.name),
             
         }} className='flex flex-row max-h-[110] mb-8 items-center justify-between rounded-[50px]'>
             <View className='flex flex-row items-center '>
@@ -53,12 +58,12 @@ export default function PokemonListItem(props: ListRenderItemInfo<INamedApiResou
                     shadowRadius: 0,
                 }} className='ml-2 mb-10 drop-shadow' width={90} height={90} uri={getPokemonImageUrl(pokemonId)} />
                 <View className='pl-3'>
-                    <Text className='font-extrabold text-lg text-gray-700' >{props.item.name}</Text>
+                    <Text className='font-extrabold text-lg text-gray-700' >{props.name}</Text>
                     <Text className=' text-gray-500 text-md '>#{pokemonId}</Text>
                 </View>
             </View>
-            <Pressable onPress={() => navigation.navigate('details',{
-                name:data.name
+            <Pressable onPress={() => navigation.push('details',{
+                name:props.name
             })} className='px-6'>
                 <Icon size={20} color={colors.gray[700]} name="caret-forward-outline"></Icon>
             </Pressable>
