@@ -1,13 +1,9 @@
-import { NavigationAction, NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { HeaderBackButtonProps, NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types';
 
 import {
-
-    Button,
     Pressable,
-    Text,
     View,
 } from 'react-native';
 import colors from 'tailwindcss/colors';

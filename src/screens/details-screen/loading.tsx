@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import {
     Animated,
-    View,
 } from 'react-native';
 import Spinner from '../../components/spinner';
 

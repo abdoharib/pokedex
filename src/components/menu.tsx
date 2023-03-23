@@ -1,12 +1,6 @@
-import { NavigationAction, NavigationProp } from '@react-navigation/native';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
-
-    Button,
-    Pressable,
-    Text,
     View,
 } from 'react-native';
 import { HeaderBackButtonProps } from '@react-navigation/native-stack/lib/typescript/src/types';

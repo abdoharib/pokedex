@@ -1,9 +1,4 @@
 import {
-
-    Button,
-    Image,
-    ListRenderItem,
-    ListRenderItemInfo,
     Pressable,
     Text,
     View,
@@ -12,14 +7,15 @@ import { SvgUri } from 'react-native-svg';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from 'tailwindcss/colors';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { HeaderBackButtonProps, NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types';
+import {  NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types';
 import { INamedApiResource, IPokemon } from 'pokeapi-typescript';
 import getLastUrlSegment from '../../../utils/get-last-url-segment';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getPokemonByName, getPokemonSpeciesByName } from '../../../api/pokemonApi';
+import { useQuery } from '@tanstack/react-query';
+
+//api
+import { getPokemonSpeciesByName } from '../../../api/pokemonApi';
 import getPokemonImageUrl from '../../../utils/get-pokemon-image-url';
 import getPokemonColor from '../../../utils/get-pokemon-color';
-var toHex = require('colornames')
 
 
 export default function PokemonListItem(props: INamedApiResource<IPokemon>): JSX.Element {

@@ -1,18 +1,13 @@
-import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useQuery } from '@tanstack/react-query';
 import { IPokemon, IPokemonSpecies } from 'pokeapi-typescript';
 import { useEffect, useRef } from 'react';
 import {
-  View,
   Text,
   Animated
 } from 'react-native';
-import { white } from 'tailwindcss/colors';
 import { getPokemonByName, getPokemonSpeciesByName } from '../../api/pokemonApi';
 import getPokemonColor from '../../utils/get-pokemon-color';
 import getPokemonImageUrl from '../../utils/get-pokemon-image-url';
-
 import PokemonDetails from './components/pokemon-details';
 import PokemonImage from './components/pokemon-image';
 import Loading from './loading';

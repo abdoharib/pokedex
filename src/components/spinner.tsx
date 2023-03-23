@@ -9,13 +9,8 @@ import {
     TransformsStyle,
     View,
 } from 'react-native';
-import { HeaderBackButtonProps, NativeStackNavigationProp } from '@react-navigation/native-stack/lib/typescript/src/types';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { ReactNode, useEffect, useRef, useState } from 'react';
-import colors, { black } from "tailwindcss/colors";
-import { ParamListBase, useNavigation } from '@react-navigation/native';
+import {  useEffect, useRef } from 'react';
 import { SvgUri } from 'react-native-svg';
-import { withAnchorPoint } from 'react-native-anchor-point';
 
 
 export default function Spinner(): JSX.Element {

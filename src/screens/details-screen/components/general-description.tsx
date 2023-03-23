@@ -1,11 +1,7 @@
 import {
-  Animated,
   Text,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import colors from 'tailwindcss/colors';
-
 
   type GeneralDescriptionProps = {
     name:string,

@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 import {
   Animated,
 } from 'react-native';
-import colors from 'tailwindcss/colors';
 import getGenderDisturbutionFromGenderRate from '../../../utils/get-gender-disturbution-from-gender-rate';
 import CreaturePropties from './creature-propties';
 import GenderDisturbution from './gender-disturbution';

@@ -1,8 +1,4 @@
-import { NavigationAction, NavigationProp } from '@react-navigation/native';
 import {
-  Button,
-  Image,
-  SafeAreaViewComponent,
   Text,
   View,
 } from 'react-native';
@@ -12,7 +8,7 @@ import SearchInput from '../../components/search-input';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from 'tailwindcss/colors';
 
-export default function ListScreen({ navigation }: { navigation: any }): JSX.Element {
+export default function ListScreen(): JSX.Element {
   return (
     <SafeAreaView className='bg-white h-full w-full px-8'>
 

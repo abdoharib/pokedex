@@ -1,5 +1,4 @@
 import {
-  Animated,
   Text,
   View,
 } from 'react-native';

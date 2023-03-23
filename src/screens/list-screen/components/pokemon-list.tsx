@@ -1,24 +1,15 @@
 import {
-
-    ActivityIndicator,
-    FlatList,
-    ListRenderItem,
-    ListRenderItemInfo,
     Text,
-    View,
-
 } from 'react-native';
 import {
     useInfiniteQuery,
 
 } from '@tanstack/react-query'
-
 import PokemonListItem from './pokemon-list-item';
 import { getAllPokemons } from '../../../api/pokemonApi';
 import getOffsetFromUrl from '../../../utils/get-offset-from-url';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { INamedApiResource, IPokemon } from 'pokeapi-typescript';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import { FlashList } from '@shopify/flash-list';
 import Spinner from '../../../components/spinner';
 
