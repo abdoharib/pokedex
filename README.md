@@ -69,7 +69,7 @@ npx react-native start
 
 1. if you are running the App on macOS make sure your envourment is set up properly, follow the instructions on the link below for detailed steps : 
 
-[Link text Here](https://reactnative.dev/docs/environment-setup)
+[React Native Envoirment Set Up Instructions ](https://reactnative.dev/docs/environment-setup)
 
 
 
