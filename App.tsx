@@ -6,70 +6,55 @@
  */
 
 import React from 'react';
-import type { PropsWithChildren } from 'react';
 import {
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ListScreen from './src/screens/list-screen';
 import DetailsScreen from './src/screens/details-screen';
-import Header from './src/components/header';
-import { setCustomText } from 'react-native-global-props';
+import { HeaderBackButtonProps } from '@react-navigation/native-stack/lib/typescript/src/types';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import Menu from './src/components/menu';
+import BackButton from './src/components/back-button';
 
-const customTextProps = { 
-  style: { 
-    fontFamily: 'Cairo'
-  }
-}
-setCustomText(customTextProps)
-
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
 
   let Stack = createNativeStackNavigator()
+  const queryClient = new QueryClient()
+
 
   return (
-    <NavigationContainer >
-      <Stack.Navigator screenOptions={{
-        title:'',
-        headerShadowVisible:false
-      }} >
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer >
+        <Stack.Navigator screenOptions={{
+          title: '',
+          headerShadowVisible: false
+        }} >
 
-        <Stack.Screen options={
-        {
-          headerLeft: (props)=> <Header {...props} ></Header>
-        }
-      } name='home' component={ListScreen} />
-        <Stack.Screen name='details' component={DetailsScreen} />
+          <Stack.Screen options={
+            {
+              headerLeft: (props: HeaderBackButtonProps) => <Menu {...props} ></Menu>
+            }
+          } name='home' component={ListScreen} />
+          <Stack.Screen
+            options={
+              {
+                headerTransparent: true,
+                headerLeft: (props: HeaderBackButtonProps) => <BackButton {...props} ></BackButton>
+              }
+            }
 
-      </Stack.Navigator>
-    </NavigationContainer>
+            name='details' component={DetailsScreen} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    </QueryClientProvider>
 
   );
 }
