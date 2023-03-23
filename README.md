@@ -41,19 +41,16 @@ yarn install
 
 ### iOS
 
-1. install the CocoPods (swift/objective-c package manger) by running :
+
+
+1. install CocoPods Pods by navigating to the ./ios folder and running :
 
 ```bash
-bundle install
+cd ./ios
+pods install
 ```
 
-2. install ios Pods by navigating to the ./ios folder and running :
-
-```bash
-cd ./ios | pods install
-```
-
-3. go back to the root and build & run the app on the simulator:
+2. go back to the project root and run the app on the simulator:
 
 ```bash
 npx react-native run-ios
