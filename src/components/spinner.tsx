@@ -31,7 +31,7 @@ export default function Spinner(): JSX.Element {
     },[])
 
     return (
-            <View className='flex items-center'>
+            <View className='  flex justify-center items-center'>
                 <Animated.View className=' flex flex-row justify-center items-center h-20 w-20' style={
                     [
                         {

@@ -1,5 +1,5 @@
 import {
-    Text,
+    Text, View,
 } from 'react-native';
 import {
     useInfiniteQuery,
@@ -37,6 +37,9 @@ export default function PokemonList(): JSX.Element {
 
 
 
+    
+
+
    
 
 
@@ -46,7 +49,7 @@ export default function PokemonList(): JSX.Element {
         }
     };
 
-    if (status === 'loading') return <Text>Loading</Text>
+    if (status === 'loading') return <View className='mt-28 justify-center items-center'><Spinner/></View>
 
     if (status === 'error') return <Text>Error</Text>
 
@@ -54,6 +57,8 @@ export default function PokemonList(): JSX.Element {
 
 
     return (
+
+        
 
         <FlashList
             keyExtractor={keyExtractor}

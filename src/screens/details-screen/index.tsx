@@ -35,9 +35,7 @@ export default function DetailsScreen({ route }: { route: any }): JSX.Element {
       }
   },[])
 
-  const { name } = route.params;
-  console.log(name);
-  
+  const { name } = route.params;  
 
   const pokemonResponse = useQuery(['pokemon', name], () => getPokemonByName(name))
   const pokemonSpeciesResponse = useQuery(['pokemon', pokemonResponse.data?.id], () => getPokemonSpeciesByName(pokemonResponse.data?.name as string), {
